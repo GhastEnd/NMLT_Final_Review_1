@@ -1,0 +1,45 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    string s;
+    cin >> s;
+
+    int n = s.size();
+
+    string temp = "";
+    int cnt = 0;
+
+    int ans;
+    for (int i = 0; i < n; ++i)
+    {
+        string T = s;
+        
+        T += temp;
+
+        int sumSize = n + cnt;
+        bool f = 1;
+        
+        for (int j = 0; j < (sumSize) / 2; ++j)
+        {
+            if (T[j] != T[sumSize - 1 - j])
+            {
+                f = 0;
+                break;
+            }
+        }
+
+        
+        if (f)
+        {
+            ans = cnt;
+            break;
+        }
+        ++cnt;
+        temp = s[i] + temp;
+    }
+
+    cout << ans;
+}
