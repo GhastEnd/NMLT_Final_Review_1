@@ -1,0 +1,14 @@
+Cho một xâu S
+Cần thêm ít nhất các kí tự vào sau xâu S để xâu S trở thành xâu đối xứng
+---------------------------------------------
+
+- Với một xâu đối xứng bất kì, giả sử gọi là (T),  ta có một vị trí khá đặc biệt, gọi tạm là (pos), mà : 
+  (-->) từ T[0] -> T[pos] các giá trị sẽ lần lượt tương ứng với các giá trị từ T[n - 1] -> T[pos], với n là độ dài xâu T.
+- Khi xâu S trở thành xâu đối xứng, nó cũng có một vị trí (pos) như vậy.
+- Nhưng là vị trí nào ? 
+
+- Ta thiết lập lời giải từ ý tưởng trên, với mỗi vị trí (i) trong xâu X, ta coi nó là (pos)
+- Ta gọi temp =  S[pos - 1] + S[pos - 2] + S[pos -3] +...+ S[0], 
+- Nếu (pos) thật sự là vị trí đối xứng, khi đó (S + temp) = S[0] + S[1] +...+ S[pos -1] + S[pos] + S[pos-1] + S[pos - 2] + ... + S[0]. 
+- Như vậy (S + temp) phải là xâu dối xứng.
+- Còn khá nhiều trường hợp để phải giải thích, nhưng thui, tui hết tiền net rồi, đọc code để hiểu hơn.
