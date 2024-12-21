@@ -1,0 +1,30 @@
+// Bài cuối , có vẻ là khó nhất, nhưng thật tình mình nghĩ nó dễ hơn bài D
+// Không có lời giải, vì làm theo những gì đề bài làm.
+
+#include <iostream>
+#include <vector>
+#include <string>
+using namespace std;
+
+int main() {
+    int R, C, ZR, ZC;
+    cin >> R >> C >> ZR >> ZC;
+    
+    vector<string> newspaper(R);
+    for (int i = 0; i < R; ++i) {
+        cin >> newspaper[i];
+    }
+    
+    for (int i = 0; i < R; ++i) {
+        for (int j = 0; j < ZR; ++j) {
+            for (int k = 0; k < C; ++k) {
+                for (int l = 0; l < ZC; ++l) {
+                    cout << newspaper[i][k]; 
+                }
+            }
+            cout << endl; 
+        }
+    }
+    
+    return 0;
+}
