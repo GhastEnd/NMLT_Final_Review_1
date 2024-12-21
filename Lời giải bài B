@@ -1,0 +1,28 @@
+Ta đang đứng ở toạ độ 0.
+Ta cần đến một vị trí (X)
+Mỗi lần có thể di chuyển 2 hoặc 3 đơn vị sang trái hay phải
+
+GIẢI 
+----------------------------------------
+- Mục tiêu là tìm số lần di chuyển ít nhất.
+- Vậy ở mỗi lần di chuyển, phải đi dài nhất có thể.
+- Dù X âm hay X dương, thì cách đi tối ưu đều cho ra số lần di chuyển như nhau.
+- Gọi (ans) là đáp án bài toán.
+
+- Ta luôn có : X = 3 * k + q
++) k = floor(X / 3), nghĩa là (X/3) lấy nguyên, hay (X/3) được làm tròn xuống.
++) q là số dư khi lấy X chia cho 3, q = X % 3.
+
+- Nếu q = 0 , lúc này X = 3 * k , hiển nhiên (ans) = k.
+- Nếu q khác 0, vì q = X % 3 nên q chỉ có thể nhận giá trị (1) hoặc (2).
+  --> Với q = 1, lúc này : X = 3 * k + 1 = 3 * (k - 1) + 3 + 1 = 3 * (k - 1) + 2 + 2.
+        ----> Đi (k - 1) bước độ dài 3, sau đó đi 2 bước độ dài (2) là cách đi tối ưu, tức là (ans) = k + 1; (**)
+  --> Với q = 2, lúc này chỉ cần di chuyển thêm 1 lần 2 đơn vị, tức là (ans) = k + 1;
+
+- Đáp án của trường hợp (**) chỉ đúng khi k khác 0.
+
+- Khi k = 0, X = q.
+  --> q = 2 chỉ cần đi 1 bước.
+  --> q = 1, ta đi một bước (3) đơn vị , sau đó đi một bước (2) đơn vị, trường hợp này cần 2 bước.
+--------------------------------------------
+
