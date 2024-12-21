@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int m , a , b, c;
+    cin >> m >> a >> b >> c;
+
+    int ans = 0 ;
+    for (int i = 1 ; i <= 2 ; ++i)
+    {
+        for (int j = 1 ; j <= m; ++j)
+        {
+            if (i == 1)
+            if (a)
+            --a, ++ans;
+            else 
+            {
+            if (c)
+              --c, ++ans;
+            }
+            else 
+            {
+                if (b)
+                --b, ++ans;
+                else 
+                {
+                    if (c)
+                    --c, ++ans;
+                    
+                }
+            }
+        }
+    }
+    cout << ans;
+}
