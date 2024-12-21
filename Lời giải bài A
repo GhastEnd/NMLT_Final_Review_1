@@ -1,0 +1,13 @@
+Có hai hàng ghế, mỗi hàng có m ghế.
+
+Có a sinh viên muốn ngồi hàng 1
+Có b sinh viên muốn ngồi hàng 2
+Có c sinh viên ngồi tuỳ ý
+
+GIẢI
+---------------------------
+Với mỗi vị trí ghế ngồi, ta sắp xếp sao cho : 
++) Đối với hàng 1 :
+ - Nếu còn sinh viên loại (a), thì xếp chỗ đó cho sinh viên loại (a)
+ - Nếu hết sinh viên loại (a), ta xem thử còn sinh viên loại (c) không, sau đó tiến hành xếp chỗ.
++) Đối với hàng 2 : tương tự hàng 1.
