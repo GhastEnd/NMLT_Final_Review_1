@@ -1,0 +1,41 @@
+#include <iostream>
+#include <algorithm>
+#include <vector>
+using namespace std;
+
+vector<int> v;
+
+int main()
+{
+    int n , k ;
+    cin >> n >> k;
+
+    int ar[1005];
+    int br[1005];
+    for (int i = 0 ; i < n; ++i)
+    {
+        cin >> ar[i];
+        br[i] = ar[i];
+    }
+
+    for (int i = 0 ; i + k <= n; ++i)
+    {
+    // sắp xếp từ vị trí (i) tới vị trí (i + k - 1), tương ứng với k phần tử
+        sort(br + i , br + i + k);
+    // Gọi vị trí của phần tử trung vị là trong đoạn [L, R] là (pos)
+    // Khi đó, pos = (L + R) / 2
+    // khi có (i) và (i + k -1) , hiển nhiên pos = (i + i + k -1) / 2 = (2 * i + k - 1) / 2
+        v.push_back(br[(2 * i + k - 1) / 2]);
+
+        // khi chuẩn bị xét tới đoạn con k phần tử tiếp theo, ta phải gán lại để lần sắp xếp sau không bị xáo trộn nhầm
+        for (int j = i ; j < i + k ; ++j)
+        {
+            br[j] = ar[j];
+        }
+
+    }
+
+    n = v.size();
+    sort(v.begin(), v.end());
+    cout << v[(n  - 1 ) / 2];
+}
